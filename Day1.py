@@ -1,9 +1,7 @@
 from urllib.request import Request, urlopen
+import numpy as np
 
-# The URL for the input data
 url = "https://adventofcode.com/2024/day/1/input"
-
-# Replace this with your session cookie from Advent of Code
 
 # Create a request with the session cookie in the headers
 request = Request(url)
@@ -23,3 +21,12 @@ try:
 except Exception as e:
     print(f"An error occurred: {e}")
 
+list1 = sorted(list1)
+list2 = sorted(list2)
+
+l1 = np.array(list1, dtype=int)
+l2 = np.array(list2, dtype=int)
+
+
+res = np.sum(np.absolute(l1 - l2))
+print(res)
