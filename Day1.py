@@ -30,3 +30,26 @@ l2 = np.array(list2, dtype=int)
 
 res = np.sum(np.absolute(l1 - l2))
 print(res)
+
+total = 0
+prev = None
+i = 0
+
+for row in l1:
+    if row == prev:
+        total += row * t
+    t = 0
+    while row > l2[i]:
+        i += 1
+    if row == l2[i]:
+        t = 1
+        i += 1
+        while i < len(l2) and row == l2[i]:
+            t += 1
+            i += 1
+        total += row * t
+
+        if i >= len(l2):
+            break
+
+print(total)
