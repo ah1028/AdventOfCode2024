@@ -2,6 +2,7 @@ from urllib.request import Request, urlopen
 import numpy as np
 
 url = "https://adventofcode.com/2024/day/1/input"
+SESSION_COOKIE = ""
 
 # Create a request with the session cookie in the headers
 request = Request(url)
@@ -29,11 +30,9 @@ l2 = np.array(list2, dtype=int)
 
 
 res = np.sum(np.absolute(l1 - l2))
-print(res)
+print(f"Stage 1 results: {res}")
 
-total = 0
-prev = None
-i = 0
+total, i, prev = 0, 0, None
 
 for row in l1:
     if row == prev:
@@ -52,4 +51,4 @@ for row in l1:
         if i >= len(l2):
             break
 
-print(total)
+print(f"Stage 2 results: {total}")
