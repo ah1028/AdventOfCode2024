@@ -1,7 +1,6 @@
 from urllib.request import Request, urlopen
 import numpy as np
 url = "https://adventofcode.com/2024/day/4/input"
-SESSION_COOKIE = "53616c7465645f5f4aacf0ebf2c4ca76750834878795538ad43bf62f6c1000ff64e0f4b437daee1b994f85307133180bc7912990ae6bf2ee062142010536536f"
 
 # Create a request with the session cookie in the headers
 request = Request(url)
