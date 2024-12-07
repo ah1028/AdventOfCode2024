@@ -17,6 +17,7 @@ for line in rules:
 
 
 valid = []
+not_valid = []
 for page in pages:
     v = True
     pg = page.split(",")
@@ -31,6 +32,8 @@ for page in pages:
         pg[a] = ""
     if v:
         valid.append(page)
+    else:
+        not_valid.append(page)
 
 total = 0
 for b in valid:
@@ -40,3 +43,11 @@ for b in valid:
 
 print(total)
 
+for entry in not_valid:
+    entry = entry.split(",")
+    for a in range(0, len(entry)):
+        entries = edges.get(entry[a])
+        if entries != None:
+            res = (set(entries)).intersection(set(pg))
+             
+            
