@@ -3,6 +3,7 @@ import numpy as np
 
 url = "https://adventofcode.com/2024/day/6/input"
 
+
 # Create a request with the session cookie in the headers
 request = Request(url)
 request.add_header("Cookie", f"session={SESSION_COOKIE}")
