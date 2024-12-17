@@ -1,9 +1,6 @@
-import networkx as nx
-import matplotlib.pyplot as plt
-
-with open("rules.txt", "r") as f:
+with open("Day5/rules.txt", "r") as f:
     rules = [l.strip() for l in f.readlines()]
-with open("pages.txt","r") as f:
+with open("Day5/pages.txt","r") as f:
     pages = [l.strip() for l in f.readlines()]
 
 edges = {}
@@ -14,8 +11,6 @@ for line in rules:
     else:
         temp = edges[second] + [first]
         edges[second] = temp
-
-
 
 def validity(pages):
     valid = []

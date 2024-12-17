@@ -1,6 +1,6 @@
 from functools import cmp_to_key
 
-rules, pages = open('rules.txt').read().split('\n\n')
+rules, pages = open("Day5/Combined.txt").read().split('\n\n')
 cmp = cmp_to_key(lambda x, y: -(x+'|'+y in rules))
 
 a = [0, 0]

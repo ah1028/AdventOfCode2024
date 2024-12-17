@@ -1,22 +1,9 @@
-from urllib.request import Request, urlopen
-import numpy as np
-
-url = "https://adventofcode.com/2024/day/6/input"
-
-
-# Create a request with the session cookie in the headers
-request = Request(url)
-request.add_header("Cookie", f"session={SESSION_COOKIE}")
-request.add_header("User-Agent", "Python urllib for Advent of Code")
-
-# Fetch the page
 try:
-    with urlopen(request) as response:
-        html_bytes = response.read()
-        html = html_bytes.decode("utf-8")
-        data = html.splitlines()
+    with open("Day6/Day6_Inp.txt", "r") as file:
+        data = file.read().splitlines()
 except Exception as e:
-    print(f"An error occurred: {e}")
+    print(f"An error occurred while reading the file: {e}")
+
 
 x, y = 0, 0
 not_found = True
