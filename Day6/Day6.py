@@ -20,7 +20,6 @@ visited = [(x,y)]
 dir = "N"
 
 while x >= 0 and x < len(data[0]) and y >= 0 and y < len(data):
-    print(x, y, dir)
     match dir:
         case "N":
             if y-1 < 0:
@@ -60,4 +59,4 @@ while x >= 0 and x < len(data[0]) and y >= 0 and y < len(data):
                 dir = "N"
 
 
-print(len(visited))
+print(f"Number of distinct positions: {len(visited)}")
