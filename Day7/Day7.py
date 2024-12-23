@@ -24,6 +24,8 @@ def dfs(numbers, ops, current_expression, index, current_result, results, target
             new_result = current_result + next_number
         elif op == '*':
             new_result = current_result * next_number
+        elif op == '||':
+            new_result = int(str(current_result) + str(next_number))
         else:
             continue
 
@@ -37,7 +39,7 @@ def dfs(numbers, ops, current_expression, index, current_result, results, target
     return False
 
 def brute_force_operators(numbers, target):
-    operators = ['+', '*']
+    operators = ['+', '*', '||']
     results = []
 
     # Start DFS with the first number as the initial result
