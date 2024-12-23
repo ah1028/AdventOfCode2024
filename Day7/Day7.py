@@ -1,4 +1,3 @@
-import operator
 try:
     with open("Day7/Day7_Inp.txt", "r") as file:
         data = file.read().splitlines()
