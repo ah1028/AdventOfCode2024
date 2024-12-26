@@ -20,9 +20,9 @@ def propagate_antis_pt2(a, b, row, col, multi):
     if x >= 0 and x < len(data[0]) and y >= 0 and y < len(data):
         if (y, x) not in antinodes:
             antinodes.append((y, x))
-            propagate_antis_pt2(a, b, row, col, multi+1)
-        else:
-            propagate_antis_pt2(a, b, row, col, multi+2)
+        propagate_antis_pt2(a, b, row, col, multi+1)
+        
+
 
 for row in range(0, len(data)):
     for col in range(0, len(data[0])):
